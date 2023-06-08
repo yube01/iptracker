@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Component, OnInit } from '@angular/core';
+import { IpService } from 'src/app/service/ip.service';
 
 
 @Component({
@@ -10,28 +11,23 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
 
-  ipAddress:string = ''
+  ip_address:string = ''
   country:string = ''
 
-  constructor(private http:HttpClient){
-this.getData();
+
+  constructor(private ipService:IpService){
+
 
   }
 
-  getData(){
-    const url = 'https://ipgeolocation.abstractapi.com/v1/?api_key=8a78499f7a634460ba76a9e53d6f3a45';
-    this.http.get(url).subscribe(
-      (data: any) => {
-        this.ipAddress = data.ip_address
-        this.country = data.country
-      },
-      (error: any) => {
-        console.error('Error:', error);
-      }
-    );
-  }
+
 
   ngOnInit(): void {
+    this.ipService.getData();
+    this.ipService.ipData.subscribe((data: any) => {
+      this.ip_address = data.ip_address;
+      this.country = data.country;
+    });
 
   }
 
