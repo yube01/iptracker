@@ -11,23 +11,17 @@ import { IpService } from 'src/app/service/ip.service';
 export class HeaderComponent implements OnInit {
 
 
-  ip_address:string = ''
-  country:string = ''
+  ipAddress: string | undefined;
+  country: string | undefined;
 
-
-  constructor(private ipService:IpService){
-
-
-  }
-
-
+  constructor(private ipService: IpService) {}
 
   ngOnInit(): void {
-    this.ipService.getData();
-    this.ipService.ipData.subscribe((data: any) => {
-      this.ip_address = data.ip_address;
-      this.country = data.country;
+    this.ipService.getData().subscribe(() => {
+      this.ipAddress = this.ipService.ipAddress;
+      this.country = this.ipService.country;
     });
+  }
 
   }
 
@@ -36,4 +30,4 @@ export class HeaderComponent implements OnInit {
 
 
 
-}
+
