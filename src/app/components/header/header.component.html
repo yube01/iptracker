@@ -1,4 +1,37 @@
-<div>
-  <h1>Ipaddress: {{ipAddress}}</h1>
-  <h1>Country: {{country}}</h1>
+<div class="title">
+  Ip Tracker
+
+  Vpn Connection : {{user.isVpn}}
+
 </div>
+
+<div class="first">
+  <div class="f1">
+    Your Ip Address:
+    {{user.ipAddress}}
+    <img [src]="user.flag" alt="">
+  </div>
+  <div class="f2">
+    <div class="time">
+      Current Time:
+      {{user.time}}
+    </div>
+    <div class="location">
+      City:{{user.city}}
+      Region:{{user.region}}
+      Country:{{user.country}}
+      Continent:{{user.continent}}
+    </div>
+  </div>
+
+
+</div>
+<div class="map">
+  Map location in here
+</div>
+<div class="ispDetail">
+  Organization: {{user.systemOrganization}}
+  Isp Name: {{user.ispName}}
+</div>
+
+

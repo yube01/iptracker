@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user';
 import { IpService } from 'src/app/service/ip.service';
 
 
@@ -11,17 +12,19 @@ import { IpService } from 'src/app/service/ip.service';
 export class HeaderComponent implements OnInit {
 
 
-  ipAddress: string | undefined;
-  country: string | undefined;
+user:User = new User()  // creating new instance
+
 
   constructor(private ipService: IpService) {}
 
   ngOnInit(): void {
-    this.ipService.getData().subscribe(() => {
-      this.ipAddress = this.ipService.ipAddress;
-      this.country = this.ipService.country;
+    this.ipService.getData(this.user).subscribe(() => {
+      this.user.ipAddress
+      this.user.city
+
     });
   }
+
 
   }
 
