@@ -1,7 +1,7 @@
 <div class="title">
-  Ip Tracker
+  <span>IPtracker</span>
 
-  Vpn Connection : {{user.isVpn}}
+ <span> Vpn Connection : {{user.isVpn}}</span>
 
 </div>
 
@@ -13,25 +13,27 @@
   </div>
   <div class="f2">
     <div class="time">
-      Current Time:
-      {{user.time}}
+     <span> Current Time: {{user.time}}</span>
+     <span>{{user.region}}region</span>
     </div>
     <div class="location">
-      City:{{user.city}}
-      Region:{{user.region}}
-      Country:{{user.country}}
-      Continent:{{user.continent}}
+      <span>City:{{user.city}}</span>
+
+      <span>Country:{{user.country}}</span>
+     <span> Continent{{user.continent}}</span>
     </div>
   </div>
 
 
 </div>
-<div class="map">
-  Map location in here
-</div>
-<div class="ispDetail">
-  Organization: {{user.systemOrganization}}
-  Isp Name: {{user.ispName}}
+<div class="footer">
+  <div class="map">
+    <map></map>
+  </div>
+  <div class="ispDetail">
+    <span>Organization: {{user.systemOrganization}}</span>
+    <span>Isp Name: {{user.ispName}}</span>
+  </div>
 </div>
 
 
