@@ -1,5 +1,7 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Map, map } from 'leaflet';
+import { Component, OnInit, createEnvironmentInjector } from '@angular/core';
+
+import { User } from 'src/app/models/user';
+import { IpService } from 'src/app/service/ip.service';
 
 @Component({
   selector: 'map',
@@ -9,22 +11,56 @@ import { Map, map } from 'leaflet';
 export class MapComponent implements OnInit {
 
 
-  @ViewChild('map',{static:true})
-  mapRef!:ElementRef
 
-  map!:Map
 
-  constructor(){}
+
+
+
+  user:User = new User()
+
+  constructor(private ipService:IpService){}
 
   ngOnInit(): void {
-
-  }
-
-  initializeMap(){
-    if(this.map) return
+    this.ipService.getData(this.user).subscribe(()=>{
+      this.user
 
 
-    this.map = map(this.mapRef.nativeElement)
-  }
+
+
+
+
+    })
+
+
+
+
+
+   }
+
+
+
+
+
+
+
+
+
+  //  display : any;
+  // center: google.maps.LatLngLiteral = {lat: 50, lng: 12};
+  // zoom = 4;
+
+
+
+  // moveMap(event: google.maps.MapMouseEvent) {
+  //   if(event.latLng!= null)
+  //   this.center = (event.latLng.toJSON());
+  // }
+
+  // move(event: google.maps.MapMouseEvent) {
+  //   if(event.latLng != null)
+  //   this.display = event.latLng.toJSON();
+  // }
+
+
 
 }

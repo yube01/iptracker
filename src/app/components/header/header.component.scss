@@ -18,6 +18,9 @@
   justify-content: space-between;
   .f1{
     font-size: 4rem;
+    img{
+      height: 5rem;
+    }
   }
   .f2{
     display: flex;
@@ -34,6 +37,9 @@
       flex-direction: column;
       padding: 1rem;
       justify-content: center;
+      :nth-child(2){
+        font-size: 1.5rem;
+      }
 
     }
     .location{

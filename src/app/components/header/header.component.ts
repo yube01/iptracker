@@ -19,8 +19,7 @@ user:User = new User()  // creating new instance
 
   ngOnInit(): void {
     this.ipService.getData(this.user).subscribe(() => {
-      this.user.ipAddress
-      this.user.city
+      this.user
 
     });
   }
