@@ -1,6 +1,6 @@
 export class User
 {
-  ipAddress?:string;
+  ipAddress?:number;
   country?:string;
   region?:string;
   city?:string;

@@ -24,16 +24,7 @@ export class MapComponent implements OnInit {
     this.ipService.getData(this.user).subscribe(()=>{
       this.user
 
-
-
-
-
-
     })
-
-
-
-
 
    }
 
@@ -43,24 +34,32 @@ export class MapComponent implements OnInit {
 
 
 
-
-
-  //  display : any;
-  // center: google.maps.LatLngLiteral = {lat: 50, lng: 12};
-  // zoom = 4;
+   display : any;
+   center: google.maps.LatLngLiteral = {lat: 50, lng: 12};
+   zoom = 4;
 
 
 
-  // moveMap(event: google.maps.MapMouseEvent) {
-  //   if(event.latLng!= null)
-  //   this.center = (event.latLng.toJSON());
-  // }
+   moveMap(event: google.maps.MapMouseEvent) {
+     if(event.latLng!= null)
+     this.center = (event.latLng.toJSON());
+   }
 
-  // move(event: google.maps.MapMouseEvent) {
-  //   if(event.latLng != null)
-  //   this.display = event.latLng.toJSON();
-  // }
+   move(event: google.maps.MapMouseEvent) {
+     if(event.latLng != null)
+     this.display = event.latLng.toJSON();
+   }
+
+
+
+
+
 
 
 
 }
+
+
+
+
+

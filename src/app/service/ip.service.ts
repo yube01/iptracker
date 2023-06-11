@@ -14,7 +14,7 @@ export class IpService {
 
   getData(user:User): Observable<any> {
     const url =
-      'https://ipgeolocation.abstractapi.com/v1/?api_key=8a78499f7a634460ba76a9e53d6f3a45extra';
+      'https://ipgeolocation.abstractapi.com/v1/?api_key=8a78499f7a634460ba76a9e53d6f3a45';
     return this.http.get(url).pipe(
       tap((data: any) => {
         user.ipAddress = data.ip_address;
