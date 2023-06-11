@@ -1,3 +1,5 @@
+@import "../../app.component.scss";
+
 
 .title{
   padding: 1rem;
@@ -12,14 +14,29 @@
   }
 }
 
+
+
 .first{
   display: flex;
   padding: 2rem ;
   justify-content: space-between;
+  @include mobile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
   .f1{
     font-size: 4rem;
+    @include mobile{
+      font-size: 2rem;
+    }
     img{
       height: 5rem;
+      @include mobile{
+        height: 3rem;
+      }
     }
   }
   .f2{
